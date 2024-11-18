@@ -30,7 +30,8 @@ namespace product_api_tests
             var products = new List<Product>
             {
                 new Product { Id = "1", Name = "Product A", Color = "Red", Price = 10.0M, StockQuantity = 100 },
-                new Product { Id = "2", Name = "Product B", Color = "Blue", Price = 20.0M, StockQuantity = 200 }
+                new Product { Id = "2", Name = "Product B", Color = "Blue", Price = 20.0M, StockQuantity = 200 },
+                 new Product { Id = "3", Name = "Product C", Color = "Green", Price = 20.0M, StockQuantity = 300 }
             };
             _mockRepository.Setup(repo => repo.GetAsync()).ReturnsAsync(products);
 
@@ -38,7 +39,7 @@ namespace product_api_tests
             var result = await _productService.GetAsync();
 
             // Assert: Verify the results
-            Assert.Equal(2, result.Count);                  // Check that two products are returned
+            Assert.Equal(3, result.Count);                  // Check that two products are returned
             Assert.Equal("Product A", result[0].Name);      // Verify the name of the first product
             _mockRepository.Verify(repo => repo.GetAsync(), Times.Once); // Ensure GetAsync was called once
         }
