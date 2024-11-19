@@ -31,7 +31,7 @@ namespace product_api_tests
             {
                 new Product { Id = "1", Name = "Product A", Color = "Red", Price = 10.0M, StockQuantity = 100 },
                 new Product { Id = "2", Name = "Product B", Color = "Blue", Price = 20.0M, StockQuantity = 200 },
-                 new Product { Id = "3", Name = "Product C", Color = "Green", Price = 20.0M, StockQuantity = 300 }
+                 new Product { Id = "3", Name = "Product C", Color = "Green", Price = 20.0M, StockQuantity = 300 },
                    new Product { Id = "4", Name = "Product D", Color = "Green", Price = 20.0M, StockQuantity = 300 }
             };
             _mockRepository.Setup(repo => repo.GetAsync()).ReturnsAsync(products);
